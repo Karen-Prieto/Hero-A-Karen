@@ -180,34 +180,42 @@ body {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 430px) {
   html, body {
+    margin: 0;
+    padding: 0;
+    height: 100dvh;        
     overflow: hidden;
   }
 
   .hero-grid {
-    grid-template-rows: 100vh;
     position: relative;
+    width: 100%;
+    height: 100dvh;          
+    overflow: hidden;
+    background: #F8EEDD;
   }
 
-  
   .tagline {
-    font-size: clamp(2rem, 2vw, 1rem);
+    position: absolute;
     top: 1rem;
     right: 1rem;
+    font-size: clamp(2rem, 4vw, 1.2rem);
+    line-height: 1.1;
     text-align: right;
-    max-width: 80%;
-    line-height: 1.2;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
   }
 
+ 
   .sticker {
     position: absolute;
-    top: 50%;
+    top: 5%;                 
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 180px;
-    height: 180px;
-    animation: none; 
+    width: 150px;
+    height: 150px;
     z-index: 10;
   }
 
@@ -216,7 +224,7 @@ body {
     height: 100%;
     fill: #C53A2E !important;
     transform-origin: center;
-    animation: spin 12s linear infinite;
+    animation: spin 14s linear infinite;
   }
 
   @keyframes spin {
@@ -224,23 +232,79 @@ body {
     to { transform: rotate(360deg); }
   }
 
- 
-  #stinger {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 95vw;
-    height: auto;
+
+  #stinger path {
+    animation: none !important;
+    stroke-dasharray: none !important;
+    stroke-dashoffset: none !important;
     fill: #2E4FA3;
+  }
+}
+
+@media (min-width: 431px) and (max-width: 768px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    display: block !important;
+    position: relative;
+    width: 100%;
+    height: 100dvh;
+    overflow: hidden;
+    background: #F8EEDD;
+  }
+
+
+  .tagline {
+    position: absolute;
+    top: 2rem;                      
+    right: 2rem;
+    font-size: clamp(2rem, 3vw, 2rem);
+    line-height: 1.1;
+    text-align: right;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
   }
 
  
+  .sticker {
+    position: absolute;
+    top: 55%;                      
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;                  
+    height: 200px;
+    z-index: 10;
+  }
+
+  #estrella {
+    width: 100%;
+    height: 100%;
+    fill: #C53A2E !important;
+    transform-origin: center;
+    animation: spin 16s linear infinite; 
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+
+
   #stinger path {
-    animation: none;
-    stroke-dasharray: none;
-    stroke-dashoffset: none;
+    animation: none !important;
+    stroke-dasharray: none !important;
+    stroke-dashoffset: none !important;
+        fill: #2E4FA3;
   }
 }
+
+
 
 
